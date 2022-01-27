@@ -21,7 +21,7 @@ jobs:
       - name: run the tests
         run: flutter test --coverage
       - name: Report code coverage
-        uses: zgosalvez/github-actions-report-lcov@v1
+        uses: zgosalvez/github-actions-report-lcov@v1.4.0
         with:
           coverage-files: apps/test_github_action_on_flutter_app/coverage/lcov.info
           minimum-coverage: 90
