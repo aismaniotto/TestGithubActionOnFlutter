@@ -1,0 +1,22 @@
+name: Run analyze and tests
+on:
+  pull_request:
+    branches: [develop, hotfix/*, release/*]
+    types: [opened, reopened, labeled, synchronize]
+jobs:
+  analyze-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: set up flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      - name: show flutter version
+        run: flutter --version
+      - name: restore the pub packages 
+        run: flutter pub get
+      - name: analyze the code
+        run: flutter analyze
+      - name: run the tests
+        run: flutter test 
