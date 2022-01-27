@@ -1,7 +1,7 @@
 name: Run analyze and tests
 on:
   pull_request:
-    branches: [develop, hotfix/*, release/*]
+    branches: [main, develop, hotfix/*, release/*]
     types: [opened, reopened, labeled, synchronize]
 jobs:
   analyze-and-test:
